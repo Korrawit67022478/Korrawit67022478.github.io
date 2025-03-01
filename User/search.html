@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ค้นหาร้านซักผ้า - WashMate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/HF.css">
+    <link rel="stylesheet" href="../CSS/search.css">
+    <link rel="stylesheet" href="../CSS/universal-design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- //////////////////topnav////////////////////// -->
+    <div class="topnav">
+        <div class="topnav-left">
+            <a href="#"><img src="../pic/profile.png" alt="Profile"></a>
+        </div>
+        <div>
+            <form action="search.html" class="searchbar">
+                <input type="text" name="search" placeholder="ค้นหาร้านซักผ้า">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="topnav-right">
+            <a href="Home.html">หน้าแรก</a>
+            <a href="Check-Status.html">เช็คสถานะ</a>
+            <a href="history.html">ประวัติ</a>
+        </div>
+    </div>
+    
+    <!-- //////////////////topnav////////////////////// -->
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>ฟิลเตอร์โดย</h3>
+            <div style="display: flex; flex-direction: column;">
+                <p>ประเภทบริการ</p>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span>ซักอบรีดผ้า
+                </label>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span>ซักผ้า
+                </label>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span>รีดผ้า
+                </label>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span>อบผ้า
+                </label>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <p>ราคา</p>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span>ต่ำกว่า 30 บาท
+                </label>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span>31 - 50 บาท
+                </label>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span>51 - 100 บาท
+                </label>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span>มากกว่า 100 บาท
+                </label>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <p>เปิดทำการ</p>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span> เปิดทำการขณะนี้
+                </label>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span> 24 ชั่วโมง
+                </label>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <p>คิวร้าน</p>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span>ว่าง
+                </label>
+                <label class="custom-label">
+                    <input type="checkbox" class="ch-hidden">
+                    <span class="custom-box"></span>ไม่ว่าง
+                </label>
+            </div>
+            
+        </div>
+        <div class="content">
+            <h3>พบ 2 ร้าน</h3>
+            <div style="align-self: flex-end; margin: 12px 48px;">
+                <label for="sort-noti">เรียงจาก</label>
+                <select name="sort" id="sortBy">
+                    <option value="newest">แจ้งเตือน (ล่าสุด)</option>
+                    <option value="oldest">แจ้งเตือน (เก่าสุด)</option>
+                </select>
+            </div>
+            <a class="store" href="orderForm.html">
+                <img src="../pic/laundry1.png" alt="Laundry Bar">
+                <div>
+                    <strong style="font-size: 24px;">Laundry Bar หน้าม.</strong>
+                    <div>เปิดทำการ ทุกวัน</div>
+                    <div>24 ชั่วโมง</div>
+                    <span style="color: #00FF88;" id="Status-State">คิวว่าง</span>
+                </div>
+            </a>
+            <a class="store" href="orderform2.html">
+                <img src="../pic/laundry1.png" alt="Laundry Bar">
+                <div>
+                    <strong style="font-size: 24px;">Laundry Bar หน้าม.</strong>
+                    <div>เปิดทำการ ทุกวัน</div>
+                    <div>24 ชั่วโมง</div>
+                    <span style="color: #00FF88;" id="Status-State">คิวว่าง</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- //////////////////footer////////////////////// -->
+    <div class="footer">
+        <img src="../pic/logo.png" alt="Logo">
+        <div class="footer-text">
+            <p>WashMate | ติดต่อ: washmate@gmail.com | โทร: +56 **** ****</p>
+        </div>
+    </div>
+    <!-- //////////////////footer////////////////////// -->
+</body>
+</html>
