@@ -1,0 +1,65 @@
+.shop-profile {
+    display: flex;
+    gap: 50px;
+    margin: 64px;
+    justify-content: space-evenly;
+}
+#shop-infoform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    width: 512px;
+}
+#shop-infoform div {
+    width: inherit;
+    margin-bottom: 10px;
+}
+#shop-infoform div > input {
+    width: 85%;
+    border: var(--color-green-2) 2px solid;
+    border-radius: 10px;
+    padding: 6px;
+    padding-left: 12px;
+}
+#shop-infoform div > label {
+    font-weight: 600;
+}
+button {
+    margin-right: 172px;
+    padding: 6px 12px;
+    border: var(--color-green-2) 2px solid;
+    border-radius: 10px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+.shop-profile > #exit > a {
+    color: white;
+    background-color: var(--color-red-1);
+    border-radius: 10px;
+    padding: 6px 12px;  
+}
+#exit a:hover {
+    background-color: hsl(0, 80%, 50%)
+}
+#exit a:active {
+    background-color: hsl(0, 80%, 40%);
+}
+#shop-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#save-s {
+    align-self: flex-end;
+    margin: 36px;
+    margin-right: 10px;
+    padding: 12px 36px;
+    color: white;
+    background-color: var(--color-green-1);
+    font-size: var(--fs-5);
+    font-weight: 600;
+    border: 0px;
+    border-radius: 10px;
+    
+}
