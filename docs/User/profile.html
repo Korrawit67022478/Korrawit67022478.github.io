@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/HF.css">
-    <link rel="stylesheet" href="../CSS/profile.css">
+    <title>WashMate - Profile</title>
     <link rel="stylesheet" href="../CSS/universal-design.css">
+    <link rel="stylesheet" href="../CSS/profile.css">
+    <link rel="stylesheet" href="../CSS/HF.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b9c8e19e25.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="../JS/handleLogin.js"></script>
 </head>
 <body>
     <div class="topnav">
         <div class="topnav-left">
-            <a href=""><img src="../pic/profile.png" alt="Profile">Noname</a>
+            <button id="authButton">
+                <img src="../pic/profile.png" alt="profileUser" id="userImage">
+                <span id="authText">Login</span>
+            </button>
         </div>
         <div class="topnav-right">
             <a href="Home.html">หน้าแรก</a>
@@ -20,29 +30,35 @@
             <a href="history.html">ประวัติ</a>
         </div>
     </div>
-
-</head>
-<body>
-    <div class="container">
-        <h2 style="text-align: center;">My Profile</h2>
-        <div class="profile-pic">
-            <img id="profileImage" src="../pic/profile.png" alt="Profile Picture">
+    <div class="user-profile">
+        <div id="user-logo">
+            <img src="../pic/profile.png" alt="logo" width="200px" id="profileImage">
             <input type="file" id="fileInput" style="display: none;" accept="image/*">
-            <label for="fileInput">✏️</div></label>
+            <label for="fileInput"><ins>แก้ไข</ins></label>
         </div>
-        <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" value="Noname">
+        <div style="display: flex; flex-direction: column;">
+            <button onclick="editField()" id="editBtn"><i class="fa-regular fa-pen-to-square"></i></button>
+            <form id="user-infoform">
+                <div>
+                    <label>Username</label><br>
+                    <input type="text" value="Ishimuta" disabled>
+                </div>
+
+                <div>
+                    <label>Email / Phone</label><br>
+                    <input type="text" value="washmate@gmail.com" disabled>
+                </div>
+                <div>
+                    <label>Password</label><br>
+                    <input type="password" value="Pasword123456789" id="password" disabled>
+                </div>
+                <button type="button" onclick="saveAll()" id="save">Save</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label>Phone Number</label>
-            <input type="text" value="0999939639">
+        <div id="exit">
+            <a href="../Login.html" id="logoutBtn"><i class="fa-solid fa-arrow-right-to-bracket" style="margin-right: 12px;"></i>Log out</a>
         </div>
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" value="name@gmail.com">
-        </div>
-        <button class="btn-save">Save</button>
+
     </div>
     <div class="footer">
         <img src="../pic/logo.png" alt="Logo">
@@ -61,6 +77,40 @@
                 reader.readAsDataURL(file);
             }
         });
+        document.addEventListener("DOMContentLoaded", function () {
+            const logoutBtn = document.getElementById("logoutBtn");
+
+            logoutBtn.onclick = function () {
+                localStorage.removeItem("loggedIn");
+                window.location.href = "login.html";
+            };
+        });
+
+        const editField = () => {
+            let input = document.querySelectorAll("input")
+            input.forEach(input => input.disabled = false)
+            Toastify({
+                text: "คุณสามารถแก้ไขข้อมูลได้แล้ว", // Message
+                duration: 3000, // 3 seconds
+                gravity: "top", // 'top' or 'bottom'
+                position: "center", // 'left', 'center', 'right'
+                backgroundColor: "#E8FE6E",
+                style: { borderRadius: "8px", padding: "10px",color: "black" }
+            }).showToast();
+        }
+        const saveAll = () => {
+            let input = document.querySelectorAll("input")
+            input.forEach(input => input.disabled = true)
+            Toastify({
+                text: "ข้อมูลได้รับการบันทึกแล้ว", // Message
+                duration: 3000, // 3 seconds
+                gravity: "top", // 'top' or 'bottom'
+                position: "center", // 'left', 'center', 'right'
+                backgroundColor: "#4CAF50", // Green success color
+                style: { borderRadius: "8px", padding: "10px" }
+            }).showToast();
+        }
+        
     </script>
 </body>
 </html>
