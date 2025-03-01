@@ -61,7 +61,7 @@
             </form>
         </div>
         <div id="exit">
-            <a href="../Login.html" id="logoutBtn"><i class="fa-solid fa-arrow-right-to-bracket" style="margin-right: 12px;"></i>Log Out</a>
+            <a href="../SignInSignOut/Login.html" id="logoutBtn"><i class="fa-solid fa-arrow-right-to-bracket" style="margin-right: 12px;"></i>Log Out</a>
         </div>
 
     </div>
@@ -87,7 +87,7 @@
 
             logoutBtn.onclick = function () {
                 localStorage.removeItem("loggedIn");
-                window.location.href = "login.html";
+                window.location.href = "../SignInSignOut/login.html";
             };
         });
 
